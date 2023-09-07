@@ -4,6 +4,9 @@ let API_URL = `https://japceibal.github.io/emercado-api/cats_products/${localSto
 let API_URL_JUGUETES =
   "https://japceibal.github.io/emercado-api/cats_products/102.json";
 let cardsContainer = document.getElementById("container-cards");
+cardsContainer.addEventListener("click", function(){
+  window.location.href = "product-info.html"
+})
 
 async function fetchProducts() {
   try {
@@ -14,7 +17,12 @@ async function fetchProducts() {
     console.error("Error trayendo la data:", error);
   }
 }
-
+async function setCat () {
+  let products = await fetchProducts();
+  let idproducts = products.forEach ((products)=> {products.id});
+  localStorage.setItem("cat2ID", idproducts);
+  window.location = "product-info.html";
+}
 
 async function displayProducts() {
   let products = await fetchProducts();
@@ -23,12 +31,14 @@ async function displayProducts() {
     let card = document.createElement("div");
     card.classList.add("div-cards");
     card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
+    <div onclick="setCat()">        
+            <img src="${product.image}" alt="${product.name}>
             <div>
                 <h2>${product.name} - ${product.currency} ${product.cost}</h2>
                 <p>${product.description}</p>
             </div>
             <span class="price">${product.soldCount} vendidos</span>
+            </div>
         `;
     cardsContainer.appendChild(card);
   });
