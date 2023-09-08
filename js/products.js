@@ -4,16 +4,13 @@ let API_URL = `https://japceibal.github.io/emercado-api/cats_products/${localSto
 let API_URL_JUGUETES =
   "https://japceibal.github.io/emercado-api/cats_products/102.json";
 let cardsContainer = document.getElementById("container-cards");
-cardsContainer.addEventListener("click", function(){
-  window.location.href = "product-info.html"
-})
 
   //------PUNTO 1 ENTREGA 3-----
   function setProdID(id) {
     localStorage.setItem("prodID", id);
     window.location = "product-info.html";
   }
-  //------------
+  //---------------------------
 
 async function fetchProducts() {
   try {

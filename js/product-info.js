@@ -1,32 +1,62 @@
+let api_info = `https://japceibal.github.io/emercado-api/products/${localStorage.getItem("prodID") + EXT_TYPE}`;
+let api_comments = `https://japceibal.github.io/emercado-api/products_comments/${localStorage.getItem("prodID") + EXT_TYPE}`;
 
-
-const api = `https://japceibal.github.io/emercado-api/products/${localStorage.getItem("idProduct")}.json`;
-
+console.log(api_info);
+console.log(api_comments);
 
 async function fetchProducts() {
     try {
-        let response = await fetch(api);
+        let response = await fetch(api_info);
         let data = await response.json();
         return data;
     } catch (error) {
-        console.error("Error trayendo la data:", error);
+        console.error("Error fetching data:", error);
+        throw error; // Re-throw the error so it can be handled outside this function
     }
 }
 
+
 async function nuevoDisplay() {
-    let products = await fetchProducts();
-    let contenedor = document.querySelector(".container"); // Usar querySelector en lugar de getElementsByClassName
+    let products= await fetchProducts();
+    let contenedor = document.getElementById("contenedor");
 
-    products.forEach((product) => {
-        contenedor.innerHTML = `
-            <h1>${product.name}</h1>
-        `;
-
-       
-    });
+    contenedor.innerHTML= `
+    <div> <h1>${products.name}</h1> </div>
+    <hr>
+    <ul class="estilo-lista">
+        <li>
+            <strong>Precio</strong>
+            <br>
+            ${products.currency} ${products.cost}
+        </li>
+        <li>
+            <strong>Descripción</strong>
+            <br>
+            ${products.description}
+        </li>
+        <li>
+            <strong>Categoría</strong>
+            <br>
+            ${products.category}
+        </li>
+        <li>
+            <strong>Cantidad de vendidos</strong>
+            <br>
+            ${products.soldCount}
+        </li>
+        <li>
+            <strong>Imágenes ilustrativas</strong>
+            <img src="${products.images[0]}">
+            <img src="${products.images[1]}">
+            <img src="${products.images[2]}">
+            <img src="${products.images[3]}">
+        </li>
+    </ul>`
 }
 
+// Call nuevoDisplay to fetch and display products
 nuevoDisplay();
+
 
 
 

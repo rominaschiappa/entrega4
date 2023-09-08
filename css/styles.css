@@ -311,3 +311,7 @@ max-height: 40px;
 float: right;
 border-radius: 10px; 
 }
+
+.estilo-lista{
+  list-style: none;
+}
