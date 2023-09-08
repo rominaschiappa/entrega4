@@ -20,8 +20,8 @@ async function nuevoDisplay() {
     let products= await fetchProducts();
     let contenedor = document.getElementById("contenedor");
 
-    contenedor.innerHTML= `
-    <div> <h1>${products.name}</h1> </div>
+    contenedor.innerHTML = `
+    <div id="nombre"> <h1>${products.name}</h1> </div>
     <hr>
     <ul class="estilo-lista">
         <li>
@@ -29,28 +29,38 @@ async function nuevoDisplay() {
             <br>
             ${products.currency} ${products.cost}
         </li>
+        <br>
         <li>
             <strong>Descripción</strong>
             <br>
             ${products.description}
         </li>
+        <br>
         <li>
             <strong>Categoría</strong>
             <br>
             ${products.category}
         </li>
+        <br>
         <li>
             <strong>Cantidad de vendidos</strong>
             <br>
             ${products.soldCount}
         </li>
+        <br>
+        </li>
+        
         <li>
             <strong>Imágenes ilustrativas</strong>
+            <br>
+            <div class="imagenes-prod">
             <img src="${products.images[0]}">
             <img src="${products.images[1]}">
             <img src="${products.images[2]}">
             <img src="${products.images[3]}">
+            </div>
         </li>
+        
     </ul>`
 }
 
