@@ -17,11 +17,10 @@ async function fetchProducts() {
     console.error("Error trayendo la data:", error);
   }
 }
-async function setCat () {
-  let products = await fetchProducts();
-  let idproducts = products.forEach ((products)=> {products.id});
-  localStorage.setItem("cat2ID", idproducts);
-  window.location = "product-info.html";
+
+async function setCat (id) {
+  localStorage.setItem("idProduct", id);
+  window.location = "product-info.html/";
 }
 
 async function displayProducts() {
@@ -31,7 +30,7 @@ async function displayProducts() {
     let card = document.createElement("div");
     card.classList.add("div-cards");
     card.innerHTML = `
-    <div onclick="setCat()">        
+    <div onclick="setCat(${product.id})">        
             <img src="${product.image}" alt="${product.name}>
             <div>
                 <h2>${product.name} - ${product.currency} ${product.cost}</h2>
@@ -40,6 +39,7 @@ async function displayProducts() {
             <span class="price">${product.soldCount} vendidos</span>
             </div>
         `;
+        
     cardsContainer.appendChild(card);
   });
 }
@@ -88,12 +88,14 @@ async function ordenarProductos(x) {
     let card = document.createElement("div");
     card.classList.add("div-cards");
     card.innerHTML = `
+    <div onclick="setCat(${product.id})">   
         <img src="${product.image}" alt="${product.name}">
         <div>
             <h2>${product.name} - ${product.currency} ${product.cost}</h2>
             <p>${product.description}</p>
         </div>
         <span class="price">${product.soldCount} vendidos</span>
+        </div>
     `;
     cardsContainer.appendChild(card);
   });
@@ -136,12 +138,14 @@ async function displayProducts(filterTerm = "") {
     let card = document.createElement("div");
     card.classList.add("div-cards");
     card.innerHTML = `
+    <div onclick="setCat(${product.id})">   
       <img src="${product.image}" alt="${product.name}">
       <div>
         <h2>${product.name} - ${product.currency} ${product.cost}</h2>
         <p>${product.description}</p>
       </div>
       <span class="price">${product.soldCount} vendidos</span>
+      </div>
     `;
     cardsContainer.appendChild(card);
   });
@@ -168,12 +172,14 @@ async function filtrarProductos() {
     let card = document.createElement("div");
     card.classList.add("div-cards");
     card.innerHTML = `
+    <div onclick="setCat(${product.id})">   
         <img src="${product.image}" alt="${product.name}">
         <div>
             <h2>${product.name} - ${product.currency} ${product.cost}</h2>
             <p>${product.description}</p>
         </div>
         <span class="price">${product.soldCount} vendidos</span>
+        </div>
     `;
     cardsContainer.appendChild(card);
   });
