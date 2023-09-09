@@ -128,7 +128,9 @@ contenedor.appendChild(card);
 let boton = document.getElementById("btnEnviar")
 
 boton.addEventListener("click", function(){
-
+    
+    let today = new Date();
+    let now = today.toLocaleString();
     let comentarioNuevo = document.getElementById("areaDeTexto").value;
     let cardNueva = document.createElement("div");
     cardNueva.classList.add("estilo-comentarios");
@@ -137,7 +139,7 @@ cardNueva.innerHTML=`
 <p>
 <strong>${localStorage.getItem("email")}</strong> -
 
-${comentarioNuevo.dateTime} -<br>
+${now} -<br>
 
 ${comentarioNuevo}
 </p>
