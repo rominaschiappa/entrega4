@@ -37,7 +37,7 @@ async function nuevoDisplay() {
     let contenedor = document.getElementById("contenedor");
     let comentarios= await fetchComments();
 
-
+//Caracteristicas Productos 
     contenedor.innerHTML = `
     <div id="nombre"> <h1>${products.name}</h1> </div>
     <hr>
@@ -82,8 +82,9 @@ async function nuevoDisplay() {
     </ul>
     
 
-    <h1>Comentarios</h1>
+    <h2>Comentarios</h2>
     `
+    // comentarios
 function crearRatingEstrellas(puntaje) {
     let maxEstrellas = 5;
     let ratingEstrellas = document.createElement("div");
@@ -107,7 +108,13 @@ let card = document.createElement("div");
 card.classList.add("estilo-comentarios");
 
 card.innerHTML=`
-<p><strong>${comentario.user}</strong> - ${comentario.dateTime} - </p>
+
+<p><strong>${comentario.user}</strong> -${comentario.dateTime} -<br>
+${comentario.description}</p>
+
+
+
+
 `
 
 card.appendChild(ratingEstrellas);

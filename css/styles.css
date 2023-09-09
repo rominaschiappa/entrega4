@@ -343,5 +343,7 @@ border-radius: 10px;
 }
 
 .estilo-comentarios{
-  display: flex;
+  display: block;
+  border-style:ridge;
+  border-bottom: 0%;
 }
