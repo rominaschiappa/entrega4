@@ -102,6 +102,7 @@ function crearRatingEstrellas(puntaje) {
 }
 
 comentarios.forEach(comentario => {
+   
 let puntaje = comentario.score;
 let ratingEstrellas = crearRatingEstrellas(puntaje);
 let card = document.createElement("div");
@@ -123,6 +124,33 @@ contenedor.appendChild(card);
 });
 
 }
+
+let boton = document.getElementById("btnEnviar")
+
+boton.addEventListener("click", function(){
+
+    let comentarioNuevo = document.getElementById("areaDeTexto").value;
+    let cardNueva = document.createElement("div");
+    cardNueva.classList.add("estilo-comentarios");
+cardNueva.innerHTML=`
+
+<p>
+<strong>${localStorage.getItem("email")}</strong> -
+
+${comentarioNuevo.dateTime} -<br>
+
+${comentarioNuevo}
+</p>
+
+`
+
+contenedor.appendChild(cardNueva);
+
+
+})
+
+
+
 
 
 
