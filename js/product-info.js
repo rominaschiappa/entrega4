@@ -1,78 +1,44 @@
-let api_info = `https://japceibal.github.io/emercado-api/products/${
-	localStorage.getItem("prodID") + EXT_TYPE
-}`;
-let api_comments = `https://japceibal.github.io/emercado-api/products_comments/${
-	localStorage.getItem("prodID") + EXT_TYPE
-}`;
+let api_info = `https://japceibal.github.io/emercado-api/products/${localStorage.getItem("prodID") + EXT_TYPE}`;
+let api_comments = `https://japceibal.github.io/emercado-api/products_comments/${localStorage.getItem("prodID") + EXT_TYPE}`;
 
 console.log(api_info);
 console.log(api_comments);
 
 async function fetchProducts() {
-	try {
-		let response = await fetch(api_info);
-		let data = await response.json();
-		return data;
-	} catch (error) {
-		console.error("Error fetching data:", error);
-		throw error; // Re-throw the error so it can be handled outside this function
-	}
+    try {
+        let response = await fetch(api_info);
+        let data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error; // Re-throw the error so it can be handled outside this function
+    }
 }
+
 
 async function fetchComments() {
-	try {
-		let response = await fetch(api_comments);
-		let data = await response.json();
-		return data;
-	} catch (error) {
-		console.error("Error fetching data:", error);
-		throw error; // Re-throw the error so it can be handled outside this function
-	}
-}
-
-function crearRatingEstrellas(puntaje) {
-    const maxEstrellas = 5;
-    const ratingEstrellas = document.createElement("div");
-
-    for (let i = 1; i <= maxEstrellas; i++) {
-      const estrella = document.createElement("span");
-      estrella.classList.add("fa", "fa-star");
-      if (puntaje >= i) {
-        estrella.classList.add("checked");
-      }
-      ratingEstrellas.appendChild(estrella);
+    try {
+        let response = await fetch(api_comments);
+        let data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error; // Re-throw the error so it can be handled outside this function
     }
-
-    return ratingEstrellas;
-}
-//Comentarios (reubicados)
-function crearCardComentario(comentario) {
-	let puntaje = comentario.score;
-	let ratingEstrellas = crearRatingEstrellas(puntaje);
-	let card = document.createElement("div");
-	card.classList.add("estilo-comentarios");
-
-	card.innerHTML = `
-	<p><strong>${comentario.user}</strong> -${comentario.dateTime} -<br>
-	${comentario.description}</p>
-	`;
-
-	card.appendChild(ratingEstrellas);
-
-	return card;
 }
 
-function getContenedorDeComentarios() { 
-    return document.getElementById("contenedor");
-}
+
+
+
+
 
 async function nuevoDisplay() {
-	let products = await fetchProducts();
-    let contenedor = getContenedorDeComentarios();
-	let comentarios = await fetchComments();
+    let products= await fetchProducts();
+    let contenedor = document.getElementById("contenedor");
+    let comentarios= await fetchComments();
 
-	//Caracteristicas Productos
-	contenedor.innerHTML = `
+//Caracteristicas Productos 
+    contenedor.innerHTML = `
     <div id="nombre"> <h1>${products.name}</h1> </div>
     <hr>
     <ul class="estilo-lista">
@@ -117,32 +83,44 @@ async function nuevoDisplay() {
     
 
     <h2>Comentarios</h2>
-    `;
-	// comentarios
-	comentarios.forEach((comentario) => {
-        const card = crearCardComentario(comentario);
-        
-        contenedor.appendChild(card);
-	});
+    `
+    // comentarios
+function crearRatingEstrellas(puntaje) {
+    let maxEstrellas = 5;
+    let ratingEstrellas = document.createElement("div");
+
+    for (let i = 1; i <= maxEstrellas; i++) {
+        let estrella = document.createElement("span");
+        estrella.classList.add("fa", "fa-star");
+        if (puntaje >= i) {
+            estrella.classList.add("checked");
+        }
+        ratingEstrellas.appendChild(estrella);
+    }
+
+    return ratingEstrellas;
 }
 
-let boton = document.getElementById("btnEnviar");
+comentarios.forEach(comentario => {
+   
+let puntaje = comentario.score;
+let ratingEstrellas = crearRatingEstrellas(puntaje);
+let card = document.createElement("div");
+card.classList.add("estilo-comentarios");
 
-boton.addEventListener("click", function () {
-    const fecha = new Date();
-    const now = fecha.toDateString();
+card.innerHTML=`
 
-    const comentarioNuevo = {
-        user: localStorage.getItem("email"),
-        description: document.getElementById("areaDeTexto").value,
-        score: document.getElementById("estrellas-enviadas").value,
-        dateTime: now
-    };
+<p><strong>${comentario.user}</strong> -${comentario.dateTime} -<br>
+${comentario.description}</p>
 
-    const cardComentario = crearCardComentario(comentarioNuevo);
 
-    const contenedor = getContenedorDeComentarios();
-    contenedor.appendChild(cardComentario)
+
+
+`
+
+card.appendChild(ratingEstrellas);
+contenedor.appendChild(card);
+
 });
 
 }
@@ -180,3 +158,7 @@ contenedor.appendChild(cardNueva);
 
 // Call nuevoDisplay to fetch and display products
 nuevoDisplay();
+
+
+
+
