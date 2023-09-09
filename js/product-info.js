@@ -127,7 +127,7 @@ let boton = document.getElementById("btnEnviar");
 
 boton.addEventListener("click", function () {
     const fecha = new Date();
-    const now = fecha.toDateString();
+    const now = fecha.toLocaleString();
 
     const comentarioNuevo = {
         user: localStorage.getItem("email"),
