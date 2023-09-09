@@ -82,23 +82,38 @@ async function nuevoDisplay() {
     </ul>
     
 
-    
+    <h1>Comentarios</h1>
     `
-comentarios.forEach(element => {
-contenedor.innerHTML += ` <p class="estilo-lista">
+function crearRatingEstrellas(puntaje) {
+    let maxEstrellas = 5;
+    let ratingEstrellas = document.createElement("div");
 
-<li>${element.user} - ${element.dateTime} - <br>${element.description} </li>  <br> 
-     
+    for (let i = 1; i <= maxEstrellas; i++) {
+        let estrella = document.createElement("span");
+        estrella.classList.add("fa", "fa-star");
+        if (puntaje >= i) {
+            estrella.classList.add("checked");
+        }
+        ratingEstrellas.appendChild(estrella);
+    }
 
-</p>
+    return ratingEstrellas;
+}
 
-    ` 
+comentarios.forEach(comentario => {
+let puntaje = comentario.score;
+let ratingEstrellas = crearRatingEstrellas(puntaje);
+let card = document.createElement("div");
+card.classList.add("estilo-comentarios");
 
+card.innerHTML=`
+<p><strong>${comentario.user}</strong> - ${comentario.dateTime} - </p>
+`
 
+card.appendChild(ratingEstrellas);
+contenedor.appendChild(card);
 
-    
 });
- 
 
 }
 

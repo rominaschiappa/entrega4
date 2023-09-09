@@ -325,10 +325,23 @@ border-radius: 10px;
   height: 150px;
   margin-top: 20px;
   justify-content: center;
-  
-  
+
 }
+
+.imagenes-prod img{
+  margin-left: 20px;
+  border: solid grey 0.5mm;
+}
+
 #nombre{
   padding-left: 20px;
   margin-top: 20px;
+}
+
+.checked {
+  color: orange;
+}
+
+.estilo-comentarios{
+  display: flex;
 }
