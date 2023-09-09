@@ -16,9 +16,27 @@ async function fetchProducts() {
 }
 
 
+async function fetchComments() {
+    try {
+        let response = await fetch(api_comments);
+        let data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error; // Re-throw the error so it can be handled outside this function
+    }
+}
+
+
+
+
+
+
 async function nuevoDisplay() {
     let products= await fetchProducts();
     let contenedor = document.getElementById("contenedor");
+    let comentarios= await fetchComments();
+
 
     contenedor.innerHTML = `
     <div id="nombre"> <h1>${products.name}</h1> </div>
@@ -61,8 +79,30 @@ async function nuevoDisplay() {
             </div>
         </li>
         
-    </ul>`
+    </ul>
+    
+
+    
+    `
+comentarios.forEach(element => {
+contenedor.innerHTML += ` <p class="estilo-lista">
+
+<li>${element.user} - ${element.dateTime} - <br>${element.description} </li>  <br> 
+     
+
+</p>
+
+    ` 
+
+
+
+    
+});
+ 
+
 }
+
+
 
 // Call nuevoDisplay to fetch and display products
 nuevoDisplay();
