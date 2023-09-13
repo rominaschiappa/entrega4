@@ -175,7 +175,7 @@ async function filtrarProductos() {
   }
 
   // Mostrar los productos filtrados
-  products.forEach((product) => {
+  filteredProducts.forEach((product) => {
     let card = document.createElement("div");
     card.classList.add("div-cards");
     card.innerHTML = `
