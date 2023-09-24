@@ -349,3 +349,17 @@ border-radius: 10px;
   border-style:ridge;
   border-bottom: 0%;
 }
+
+/* estilo para el nombre de usuario*/
+.nav-link#usuarioDropdown {
+  display: flex;
+  align-items: center; /*centre vertical*/
+}
+
+/* icono flecha desplegable*/
+.nav-link#usuarioDropdown .navbar-toggler-icon {
+  margin-left: 5px; /*espacio entre nombre usuario y flecha*/
+  }
+
+ 
+

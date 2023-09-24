@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    
+  
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
         window.location = "products.html"
@@ -23,6 +23,18 @@ function isLoggedIn() {
         return false;
     }
 }
+
+// entrea 4, parte 2: función para cerrar sesión
+function cerrarSesion() {
+    localStorage.removeItem("email");
+    window.location.href = 'login.html'; //redirige al inicio
+}
+
+// entrega 4, parte 2: evento click cerrar sesión
+document.getElementById("cerrarSesion").addEventListener("click", function() {
+    cerrarSesion();
+} );
+
 
 window.addEventListener('load', function() {
     if (!isLoggedIn()) {
