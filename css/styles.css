@@ -401,3 +401,19 @@ body.dark-theme div{
   }
   
   }
+  
+  .producto {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block; /* Mostrar productos en línea */
+    width: 200px; /* Ancho fijo para cada producto */
+    vertical-align: top; /* Alinear los productos en la parte superior */
+    box-sizing: border-box; /* Incluir el borde en el ancho total */
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+}

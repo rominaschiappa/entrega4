@@ -143,3 +143,41 @@ boton.addEventListener("click", function () {
 
  // Call nuevoDisplay to fetch and display products
  nuevoDisplay();
+
+
+ const productos = [
+    { nombre: "Producto 1", imagen: "imagen1.jpg" },
+    { nombre: "Producto 2", imagen: "imagen2.jpg" },
+    { nombre: "Producto 3", imagen: "imagen3.jpg" },
+];
+
+// Función para mostrar productos en la página
+function mostrarProductos() {
+    const productosContainer = document.getElementById("productos-container");
+
+    productos.forEach(producto => {
+        const productoDiv = document.createElement("div");
+        productoDiv.classList.add("producto");
+
+        const nombreProducto = document.createElement("h2");
+        nombreProducto.textContent = producto.nombre;
+
+        const imagenProducto = document.createElement("img");
+        imagenProducto.src = producto.imagen;
+        imagenProducto.alt = producto.nombre;
+
+        productoDiv.appendChild(nombreProducto);
+        productoDiv.appendChild(imagenProducto);
+
+        productosContainer.appendChild(productoDiv);
+    });
+}
+
+// Llamar a la función para mostrar productos cuando la página cargue
+window.onload = mostrarProductos;
+
+
+
+
+
+
