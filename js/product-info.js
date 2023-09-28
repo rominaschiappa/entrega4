@@ -158,38 +158,34 @@ async function mostrarProductosrelacionados() {
     let products = await fetchProducts()
     const productosContainer = document.getElementById("productos-container");
 
-    
-    productosContainer.innerHTML=
-    `
-    
-    <hr>
-    <ul class="producto"class="productoReferencia" onclick="prodID(${products.relatedProducts[0].id})">
-        <li>
-        <div id="nombre"> <img src="${products.relatedProducts[0].image}"></img> </div>
-            <br>
-            <div id="nombre"> <h1>${products.relatedProducts[0].name}</h1> </div>
-        </li>
-        
-        
-        
-        </ul>
-
-        <ul class="producto" class="productoReferencia" onclick="prodID(${products.relatedProducts[1].id})">
-        <li>
-        <div id="nombre"> <img src="${products.relatedProducts[1].image}"></img> </div>
-            <br>
-            <div id="nombre"> <h1>${products.relatedProducts[1].name}</h1> </div>
-        </li>
-        
-        
-        
-        </ul>
-
-       
-       
-         
-        
+    products.relatedProducts.forEach(element=>{
+        productosContainer.innerHTML+=
         `
+        
+        
+        <ul class="producto"class="productoReferencia" onclick="prodID(${element.id})">
+            <li>
+            <div id="nombre"> <img src="${element.image}"></img> </div>
+                <br>
+                <div id="nombre"> <h1>${element.name}</h1> </div>
+            </li>
+            
+            
+            
+            </ul>
+    
+        
+    
+           
+           
+             
+            
+            `
+
+
+    })
+
+   
 
 }
 
