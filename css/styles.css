@@ -411,6 +411,7 @@ body.dark-theme div{
     width: 200px; /* Ancho fijo para cada producto */
     vertical-align: top; /* Alinear los productos en la parte superior */
     box-sizing: border-box; /* Incluir el borde en el ancho total */
+    list-style: none;
 }
 
 .producto img {
