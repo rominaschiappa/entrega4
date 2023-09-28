@@ -401,17 +401,28 @@ body.dark-theme div{
   }
   
   }
-  
+  #btnEnviar{
+    border-radius: 15px;
+    outline-color: beige;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+h2{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}  
   .producto {
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    border: 4px solid bisque;
     padding: 10px;
-    margin: 10px;
+    margin: 15px;
     text-align: center;
     display: inline-block; /* Mostrar productos en línea */
     width: 200px; /* Ancho fijo para cada producto */
     vertical-align: top; /* Alinear los productos en la parte superior */
     box-sizing: border-box; /* Incluir el borde en el ancho total */
     list-style: none;
+   text-overflow: inherit;
+
 }
 
 .producto img {
