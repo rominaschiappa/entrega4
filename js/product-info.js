@@ -145,6 +145,12 @@ boton.addEventListener("click", function () {
  nuevoDisplay();
 
 
+// funcion que guarda el id
+ function prodID(id) {
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html"
+}
+
  
 
 // Función para mostrar productos en la página
@@ -157,16 +163,31 @@ async function mostrarProductosrelacionados() {
     `
     
     <hr>
-    <ul class="producto">
+    <ul class="producto"class="productoReferencia" onclick="prodID(${products.relatedProducts[0].id})">
         <li>
-        <div id="nombre"> <img src="${products.images[0]}"></img> </div>
+        <div id="nombre"> <img src="${products.relatedProducts[0].image}"></img> </div>
             <br>
-            <div id="nombre"> <h1>${products.name}</h1> </div>
+            <div id="nombre"> <h1>${products.relatedProducts[0].name}</h1> </div>
         </li>
         
         
         
         </ul>
+
+        <ul class="producto" class="productoReferencia" onclick="prodID(${products.relatedProducts[1].id})">
+        <li>
+        <div id="nombre"> <img src="${products.relatedProducts[1].image}"></img> </div>
+            <br>
+            <div id="nombre"> <h1>${products.relatedProducts[1].name}</h1> </div>
+        </li>
+        
+        
+        
+        </ul>
+
+       
+       
+         
         
         `
 
