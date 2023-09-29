@@ -409,6 +409,7 @@ body.dark-theme div{
 h2{
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+text-decoration-color: aqua;
 }  
   .producto {
     border-radius: 10px;
@@ -418,8 +419,7 @@ h2{
     text-align: center;
     display: inline-block; /* Mostrar productos en línea */
     width: 200px; /* Ancho fijo para cada producto */
-    vertical-align: top; /* Alinear los productos en la parte superior */
-    box-sizing: border-box; /* Incluir el borde en el ancho total */
+    vertical-align: top; /* Alinear los productos en la parte superior */    box-sizing: border-box; /* Incluir el borde en el ancho total */
     list-style: none;
    text-overflow: inherit;
 
@@ -436,16 +436,24 @@ h2{
 }
 
 #carouselExampleCaptions{
-  height: 450px;
-  width: 900px;
+  height: 700px;
+  width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 .carousel-caption{
-  text-shadow: -5px 3px 4px rgba(0,0,0,1);
+  text-shadow: -5px 3px 4px red;
+  text-transform:initial;
+font-family:Arial, Helvetica, sans-serif;
+border-radius: 30px;
 }
 
 #main-display{
-  margin-top: 150px;
+  margin: 75px;
+
+}
+#botonmas{
+  color: salmon;
+  text-shadow: #333;
 }
 
