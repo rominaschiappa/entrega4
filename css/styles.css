@@ -457,3 +457,6 @@ border-radius: 30px;
   text-shadow: #333;
 }
 
+#carouselExample{
+    max-width: 50%; 
+  }
