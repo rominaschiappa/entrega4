@@ -430,3 +430,22 @@ h2{
     height: auto;
 }
 
+/*  Carrusel */ 
+.img-carrusel{
+  border-radius: 15px;
+}
+
+#carouselExampleCaptions{
+  height: 450px;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel-caption{
+  text-shadow: -5px 3px 4px rgba(0,0,0,1);
+}
+
+#main-display{
+  margin-top: 150px;
+}
+

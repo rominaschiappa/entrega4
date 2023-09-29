@@ -48,39 +48,51 @@
   <main>
     <div class="jumbotron text-center"></div>
     <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
-              <img class="bd-placeholder-img card-img-top" src="img/cars_index.jpg"
-                alt="Imgagen representativa de la categoría 'Autos'">
-              <h3 class="m-3">Autos</h3>
-              <div class="card-body">
-                <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
+      <main id="main-display">
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div id="cars" class="carousel-item active">
+              <img src="img/cars_index.jpg" class="d-block w-100 img-carrusel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h3 class="carrusel-text">Autos</h3>
+                <p class="carrusel-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
+              </div>
+            </div>
+            <div id="toys" class="carousel-item">
+              <img src="img/toys_index.jpg" class="d-block w-100 img-carrusel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h3 class="carrusel-text">Juguetes</h3>
+                <p class="carrusel-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
+              </div>
+            </div>
+            <div id="furniture" class="carousel-item">
+              <img src="img/furniture_index.jpg" class="d-block w-100 img-carrusel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h3 class="carrusel-text">Muebles</h3>
+                <p class="carrusel-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="juguetes">
-              <img class="bd-placeholder-img card-img-top" src="img/toys_index.jpg"
-                alt="Imgagen representativa de la categoría 'Juguetes'">
-              <h3 class="m-3">Juguetes</h3>
-              <div class="card-body">
-                <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="muebles">
-              <img class="bd-placeholder-img card-img-top" src="img/furniture_index.jpg"
-                alt="Imgagen representativa de la categoría 'Muebles'">
-              <h3 class="m-3">Muebles</h3>
-              <div class="card-body">
-                <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
-              </div>
-            </div>
-          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
+      </main>
         <div class="row">
           <a class="btn btn-light btn-lg btn-block" href="categories.html">Y mucho más!</a>
         </div>
