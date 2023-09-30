@@ -103,6 +103,7 @@ async function nuevoDisplay() {let products = await fetchProducts();
         <li>
         <strong>Imágenes ilustrativas</strong>
         <br>
+        <br>
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -120,11 +121,11 @@ async function nuevoDisplay() {let products = await fetchProducts();
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">Anterior</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">Siguiente</span>
             </button>
         </div>
     </li>
@@ -147,7 +148,7 @@ boton.addEventListener("click", function () {
     const fecha = new Date();
     const now = fecha.toLocaleString();
 
-    const comentarioNuevo = {
+    const  comentarioNuevo = {
         user: localStorage.getItem("email"),
         description: document.getElementById("areaDeTexto").value,
         score: document.getElementById("estrellas-enviadas").value,
@@ -187,16 +188,9 @@ async function mostrarProductosrelacionados() {
                 <br>
                 <div id="nombre"> <h1>${element.name}</h1> </div>
             </li>
+
             
-            
-            
-            </ul>
-    
-        
-    
-           
-           
-             
+            </ul>             
             
             `
 

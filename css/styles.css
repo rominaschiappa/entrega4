@@ -458,5 +458,37 @@ border-radius: 30px;
 }
 
 #carouselExample{
-    max-width: 50%; 
+    max-width: 300px;
+    margin-left: 300px;
+    
   }
+/*comentarios*/
+
+
+h6{
+  color:salmon;
+  text-decoration:solid;
+}
+#comentar{
+  text-align: left;
+  color:salmon;
+}
+#areaDeTexto{
+  width: 270px;
+  border-radius: 15px;
+  border-color: salmon;
+}
+#estrellas-enviadas{
+  width: 150px;
+  border-radius:  15px;
+  color:salmon;
+  text-align: center;
+  border-color: salmon;
+}
+
+
+#btnEnviar{
+  color:beige;
+  background-color: salmon;
+  border-color:salmon;
+}
