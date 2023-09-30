@@ -9,6 +9,8 @@
   font-weight: bold;
 }
 
+
+
 nav a {
   text-decoration: none;
 }
@@ -492,3 +494,15 @@ h6{
   background-color: salmon;
   border-color:salmon;
 }
+
+
+/*Rodri S : Centrar texto del navegador*/
+.navbar-nav{
+  align-items: center;
+}
+/* Mano de click arriba de los div de productos relacionados */ 
+.producto{
+  cursor:pointer
+}
+
+
