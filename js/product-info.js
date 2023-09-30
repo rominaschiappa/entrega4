@@ -170,7 +170,12 @@ boton.addEventListener("click", function () {
     window.location = "product-info.html"
 }
 
+
+
+
  
+// inicio Entrega 4 parte 1 
+
 
 // Función para mostrar productos en la página
 async function mostrarProductosrelacionados() {
@@ -204,7 +209,7 @@ async function mostrarProductosrelacionados() {
 // Llamar a la función para mostrar productos cuando la página cargue
 window.onload = mostrarProductosrelacionados;
 
-
+// Fin entrega 4 parte 1
 
 
 

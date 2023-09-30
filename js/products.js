@@ -201,7 +201,7 @@ document.getElementById("rangeFilterCount").addEventListener("click", function (
 });
 
 
-//Cambiar de tema dark/light ENTREGA 4 PARTE 3
+//inicio ENTREGA 4 PARTE 3     cambiar dark light
 
 const btnTema = document.getElementById('btnTema');
 const body = document.body;
@@ -226,17 +226,15 @@ if (currentTheme === 'dark') {
   body.classList.add('light-theme')
   }
     
-// Agregar un listener al botón para cambiar el tema cuando se hace clic
+// Agregar un listener al botón para cambiar el tema cuando se hace click
 btnTema.addEventListener('click', toggleTheme);
 
 
-
-let email = localStorage.getItem("email"); // <- email = "emilianopintos18@gmail.com"
-
+// Fin entrega 4 parte 3
 
 
 
-let li_nav = document.getElementById("usuario");
-
-
-li_nav.innerHTML = `<span class="nav-link">${email}</span>`;
+// Mostrar nombre de usuario en barra nav
+  let email = localStorage.getItem("email"); // <- email ej = "emilianopintos18@gmail.com"
+  let li_nav = document.getElementById("usuario");
+li_nav.innerHTML = `<span class="nav-link">${email}</span>`;  
