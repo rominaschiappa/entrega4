@@ -506,35 +506,3 @@ h6{
 }
 
 
-/*estilos pagina carrito */
-
-.tabla-carrito{
-  border-collapse: collapse;
-  width: 100%;
-}
-
-
-.titulos th{
-border-bottom: 5px solid black;
-text-align: center;
-}
-
-.tabla-carrito td{
- text-align: center;
-
-}
-
-.imagen-carrito{
-  width: 125px;
-  margin: 5px;
-}
-
-
-.h1Carrito{
-  text-align: center;
-  margin: 50px;
-}
-
-.negrita{
-  font-weight: bold;
-}
